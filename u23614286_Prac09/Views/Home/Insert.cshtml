@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Insert a new member";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("DoInsert", "Home", FormMethod.Post))
+{
+    <div class="form-group">
+        <label for="FullName">Name</label>
+        @Html.TextBox("FullName", null, new { @class = "form-control", type = "text" })
+    </div>
+    <div class="form-group">
+        <label for="ClubName">Club Name</label>
+        @Html.TextBox("ClubName", null, new { @class = "form-control", type = "text" })
+    </div>
+    <div class="form-group">
+        <label for="Age">Age</label>
+        @Html.TextBox("Age", null, new { @class = "form-control", type = "number" })
+    </div>
+    <div class="form-group">
+        <label for="MembershipFee">Membership Fee</label>
+        @Html.TextBox("MembershipFee", null, new { @class = "form-control", type = "number", step = "0.01"})
+    </div>
+    <button type="submit" class="btn btn-primary" style="margin-top: 10px; ">Add</button>
+}
+
+

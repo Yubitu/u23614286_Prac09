@@ -1,0 +1,14 @@
+﻿@{
+    ViewBag.Title = "Delete Membership Profile";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("DoDelete", "Home", FormMethod.Post))
+{
+    <div class="form-group">
+        <label for="id">ID</label>
+        @Html.TextBox("id", null, new { @class = "form-control", type = "number" })
+    </div>
+    <button type="submit" class="btn btn-danger" style="margin-top: 10px; ">Delete</button>
+}

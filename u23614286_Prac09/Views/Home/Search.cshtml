@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "Search Member to Update";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("Search", "Home", FormMethod.Post))
+{
+    <label>Enter Member ID:</label>
+    <br />
+    @Html.TextBox("id", null, new { @class = "form-control", type = "number" })
+    <button type="submit" class="btn btn-primary mt-2">Search</button>
+}
+
+@if (ViewBag.Message != null)
+{
+    <div class="alert alert-danger mt-3">@ViewBag.Message</div>
+}
+

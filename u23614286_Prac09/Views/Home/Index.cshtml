@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "Social Club Membership Campaign!!";
+}
+
+<div class="jumbotron" style="font-size: 18px; margin-bottom: 30px;">
+    @if (!String.IsNullOrEmpty(ViewBag.Message))
+    {
+        <strong>@ViewBag.Message</strong>
+    }
+</div>
+
+    <h1 class="text-center">@ViewBag.Title</h1>
+
+    <p>
+        This web interface allows a prospective member to join a social club, switch club membership, and change membership status as desired. All changes are stored in a database.
+    </p>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h3>Register</h3>
+            <p>When the button is clicked the member's information will be inserted into the database.</p>
+            <p>
+                @Html.ActionLink("New Membership", "Insert", "Home", null, new { @class = "btn btn-primary" })
+            </p>
+        </div>
+        <div class="col-md-4">
+            <h3>Update</h3>
+            <p>When the button is clicked a member's old information will be replaced in the database.</p>
+            <p>
+                @Html.ActionLink("Update Membership", "Search", "Home", null, new { @class = "btn btn-warning" })
+            </p>
+        </div>
+        <div class="col-md-4">
+            <h3>Delete</h3>
+            <p>When the button is clicked then the member's data will be deleted from the database.</p>
+            <p>
+                @Html.ActionLink("Terminate Membership", "Delete", "Home", null, new { @class = "btn btn-danger" })
+            </p>
+        </div>
+    </div>

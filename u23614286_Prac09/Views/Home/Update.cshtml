@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "Update Membership Profile";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("DoUpdate", "Home", FormMethod.Post))
+{
+    <input type="hidden" name="id" value="@TempData["Id"]" />
+
+    <div class="form-group">
+        <label for="FullName">Name</label>
+        <input type="text" class="form-control" name="FullName" value="@TempData["FullName"]" />
+    </div>
+
+    <div class="form-group">
+        <label for="ClubName">Club Name</label>
+        <input type="text" class="form-control" name="ClubName" value="@TempData["ClubName"]" />
+    </div>
+
+    <div class="form-group">
+        <label for="Age">Age</label>
+        <input type="number" class="form-control" name="Age" value="@TempData["Age"]" />
+    </div>
+
+    <div class="form-group">
+        <label for="MembershipFee">Membership Fee</label>
+        <input type="number" step="0.01" class="form-control" name="MembershipFee" value="@TempData["MembershipFee"]" />
+    </div>
+
+    <button type="submit" class="btn btn-primary" style="margin-top: 10px; ">Update Membership</button>
+}
